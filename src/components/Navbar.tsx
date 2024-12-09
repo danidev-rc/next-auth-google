@@ -2,14 +2,15 @@
 
 import Link from 'next/link'
 import { signIn, useSession, signOut } from 'next-auth/react'
+import { ModeToggle } from './theme-toggle-button'
 
 function Navbar() {
   const { data: session } = useSession()
 
   return (
-    <nav className="flex items-center justify-between bg-slate-900 px-24 py-3 text-white">
+    <nav className="flex items-center justify-between bg-slate-900 px-24 py-3">
       <Link href="/">
-        <h1>Google</h1>
+        <h1 className="text-white">Google</h1>
       </Link>
       {session?.user ? (
         <div className="flex items-center gap-4">
@@ -31,6 +32,7 @@ function Navbar() {
                 callbackUrl: '/',
               })
             }}
+            className="rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
           >
             Log out
           </button>
@@ -43,6 +45,7 @@ function Navbar() {
           Sign in
         </button>
       )}
+      <ModeToggle />
     </nav>
   )
 }
