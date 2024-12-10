@@ -11,7 +11,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-export function FormPage() {
+function FormPage() {
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -46,3 +46,5 @@ export function FormPage() {
     </Card>
   )
 }
+
+export default FormPage
