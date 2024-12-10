@@ -1,13 +1,11 @@
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import { FormPage } from '../Form/page'
 
 function DashboardPage() {
   return (
     <div className="grid justify-center">
       <h1>DashboardPage</h1>
-      <div className="my-4 flex justify-center">
-        <Button>Click me</Button>
-        <Input type="email" placeholder="Email" />
+      <div className="my-4 flex h-screen items-center justify-center">
+        <FormPage />
       </div>
     </div>
   )

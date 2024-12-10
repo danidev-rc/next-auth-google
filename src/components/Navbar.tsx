@@ -8,14 +8,16 @@ function Navbar() {
   const { data: session } = useSession()
 
   return (
-    <nav className="flex items-center justify-between bg-slate-900 px-24 py-3">
+    <nav className="fixed flex w-full items-center justify-between bg-slate-900 px-24 py-3">
       <Link href="/">
         <h1 className="text-white">Google</h1>
       </Link>
       {session?.user ? (
         <div className="flex items-center gap-4">
-          <Link href="/dashboard">Dashboard</Link>
-          <div>
+          <Link href="/dashboard" className="text-white">
+            Dashboard
+          </Link>
+          <div className="text-white">
             <p>{session.user.name}</p>
             <p>{session.user.email}</p>
           </div>
@@ -39,7 +41,7 @@ function Navbar() {
         </div>
       ) : (
         <button
-          onClick={() => signIn()}
+          onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
           className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
         >
           Sign in
