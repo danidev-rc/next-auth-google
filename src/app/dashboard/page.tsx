@@ -1,4 +1,4 @@
-import { FormPage } from '../Form/page'
+import { FormPage } from '@/app/Form/page'
 
 function DashboardPage() {
   return (
